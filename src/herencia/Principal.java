@@ -13,6 +13,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -25,7 +29,18 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        setLocationRelativeTo(null);
+
+        setLocationRelativeTo(null);//para que nos aparesca la pantalla sentrada
+//        setResizable(false);
+//        setTitle("CALCULADORA BASICA");
+//        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Vehiculo.jpg")).getImage());
+//
+//        ((JPanel) getContentPane()).setOpaque(false);
+//        ImageIcon uno = new ImageIcon(this.getClass().getResource("/Imagenes/Vehiculo.jpg"));
+//        JLabel fondo = new JLabel();
+//        fondo.setIcon(uno);
+//        getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
+//        fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
 
 //        precio.setVisible(false);
 //        textPrecio.setVisible(false);
@@ -228,7 +243,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(bntGuardar)
                 .addGap(198, 198, 198))
             .addGroup(layout.createSequentialGroup()
-                .addGap(395, 395, 395)
+                .addGap(431, 431, 431)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -268,7 +283,7 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(146, 146, 146)
                                 .addComponent(Furgoneta)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(placa)
                             .addComponent(textPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,9 +304,9 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bntGuardar)
-                        .addGap(66, 66, 66)
+                        .addGap(52, 52, 52)
                         .addComponent(jButton1)
-                        .addGap(75, 75, 75))))
+                        .addGap(89, 89, 89))))
         );
 
         pack();
@@ -352,7 +367,6 @@ public class Principal extends javax.swing.JFrame {
                 System.out.println("se ha creado un archivo");
             }
 
-            System.out.println("Probando.");
             //Aqui lo lee
             FileReader leer = new FileReader(archivo);
             BufferedReader a = new BufferedReader(leer);
@@ -387,7 +401,6 @@ public class Principal extends javax.swing.JFrame {
                 System.out.println("se ha creado un archivo");
             }
 
-            System.out.println("Probando.");
             //Aqui lo lee
             FileReader leer = new FileReader(archivo);
             BufferedReader a = new BufferedReader(leer);
@@ -436,41 +449,10 @@ public class Principal extends javax.swing.JFrame {
         c.setMatricula(numPlaca);
         c.setPotencia(deportivo);
         c.setVelocidadMaxima(index);
-         ArrayList ListaDeportivo = new ArrayList<>();
-         ListaDeportivo.add(c);
-         
-         
-         File f;
-        FileWriter w;
-        BufferedWriter bw;
-        PrintWriter wi;
-        String texto = "";
-        try {
-            File archivo = new File("C:\\Users\\Anthonny\\Documents\\NetBeansProjects\\Herencia\\Deportivos.txt");
+        ArrayList ListaDeportivo = new ArrayList<>();
+        ListaDeportivo.add(c);
 
-            if (archivo.createNewFile()) {
-                System.out.println("se ha creado un archivo");
-            }
-
-            System.out.println("Probando.");
-            //Aqui lo lee
-            FileReader leer = new FileReader(archivo);
-            BufferedReader a = new BufferedReader(leer);
-            String linea;
-            while ((linea = a.readLine()) != null) {
-                ListaDeportivo.add(linea);
-            }
-            
-            // System.out.println(inString);
-            a.close();
-
-        } catch (IOException e) {
-            System.out.println("no se ha podido crear el archivo" + e);
-        }
-         
-        
         //Aqui imprimimo los atributos
-
         System.out.println(c.getAtributos());
 
 
