@@ -21,7 +21,7 @@ public class InterfazDeportivo extends javax.swing.JFrame {
      */
     public InterfazDeportivo() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -35,7 +35,7 @@ public class InterfazDeportivo extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        velo = new javax.swing.JComboBox();
         textPotencia = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         bntGuarda = new javax.swing.JButton();
@@ -46,7 +46,7 @@ public class InterfazDeportivo extends javax.swing.JFrame {
 
         jLabel4.setText("Velocidad Maxima");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "100", "150", "200" }));
+        velo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "100", "150", "200" }));
 
         jLabel3.setText("Potencia");
 
@@ -72,7 +72,7 @@ public class InterfazDeportivo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(velo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(380, 380, 380)
                         .addComponent(bntGuarda)))
@@ -90,7 +90,7 @@ public class InterfazDeportivo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(velo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(bntGuarda)
                 .addContainerGap(223, Short.MAX_VALUE))
@@ -101,52 +101,24 @@ public class InterfazDeportivo extends javax.swing.JFrame {
 
     private void bntGuardaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntGuardaActionPerformed
         // TODO add your handling code here:
-          //String nombre;
-        File f;
-        FileWriter w;
-        BufferedWriter bw;
-        PrintWriter wi;
-        String texto = "";
+        Deportivo c = new Deportivo();
 
-        File archivo;
-//        try {// 
-//
-//            archivo = new File("C:\\Users\\Anthonny\\Documents\\CodigoProyecto\\Proyect\\Posts.txt"); 
-//
-//            if (archivo.createNewFile()) {//crea el archivo
-//                System.out.println("Se ha creado un archivo");
-//            }
-//
-//            w = new FileWriter(archivo, true);
-//            bw = new BufferedWriter(w); 
-//            wi = new PrintWriter(bw);
-//            
-//            String nombre_Puesto;
-//            String sigla;
-//            
-//            
-//            double potencia;
-//            
-//            int precio;
-//            
-//           // precio= Integer.parseInt(textPrecio.get)
-//
-////            bw.write(nombre_Puesto.replaceAll("_","\n") + " ");
-////            bw.write(sigla.replaceAll("_","\n") + " ");
-////            bw.write(String.valueOf(new Integer(salario) + " "));
-////            bw.newLine();
-////            wi.close();
-////            bw.close();
-////
-////        } catch (IOException e) { 
-////            System.err.println("No se ha creado el archivo" + e);
-////
-////        }
-////    }
-//
-//        
-//        
+        double deportivo;
+
+        deportivo = Double.parseDouble(textPotencia.getText());
+        int index = velo.getSelectedIndex();
+        if (index == 0) {
+            int num = 100;
+        } else if (index == 1) {
+            int num1 = 150;
+        } else if (index == 2) {
+            int num2 = 250;
+
+        }
         
+        
+
+
     }//GEN-LAST:event_bntGuardaActionPerformed
 
     /**
@@ -186,10 +158,10 @@ public class InterfazDeportivo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntGuarda;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField textPotencia;
+    private javax.swing.JComboBox velo;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,12 +42,13 @@ public class Principal extends javax.swing.JFrame {
         textPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         textPlaca = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        furgoneta = new javax.swing.JCheckBox();
+        deportivo = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         marca = new javax.swing.JComboBox();
         colores = new javax.swing.JComboBox();
+        bntContinuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,17 +58,17 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel6.setText("Numero Placa");
 
-        jCheckBox1.setText("Furgoneta");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        furgoneta.setText("Furgoneta");
+        furgoneta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                furgonetaActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Deportivo");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        deportivo.setText("Deportivo");
+        deportivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                deportivoActionPerformed(evt);
             }
         });
 
@@ -87,6 +88,13 @@ public class Principal extends javax.swing.JFrame {
         colores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coloresActionPerformed(evt);
+            }
+        });
+
+        bntContinuar.setText("Continuar");
+        bntContinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntContinuarActionPerformed(evt);
             }
         });
 
@@ -111,9 +119,9 @@ public class Principal extends javax.swing.JFrame {
                                         .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(283, 283, 283))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
+                                .addComponent(furgoneta)
                                 .addGap(43, 43, 43)
-                                .addComponent(jCheckBox2)
+                                .addComponent(deportivo)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -128,6 +136,10 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(212, 212, 212)
+                .addComponent(bntContinuar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,25 +164,25 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(textPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
-                .addGap(204, 204, 204))
+                    .addComponent(furgoneta)
+                    .addComponent(deportivo))
+                .addGap(33, 33, 33)
+                .addComponent(bntContinuar)
+                .addGap(146, 146, 146))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void furgonetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_furgonetaActionPerformed
         // TODO add your handling code here:
-        interfazFurgoneta a = new interfazFurgoneta();
-        a.setVisible(true);
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_furgonetaActionPerformed
+
+    private void deportivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deportivoActionPerformed
         // TODO add your handling code here:
-        InterfazDeportivo b = new InterfazDeportivo();
-        b.setVisible(true);
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    }//GEN-LAST:event_deportivoActionPerformed
 
     private void marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaActionPerformed
         // TODO add your handling code here:
@@ -199,7 +211,7 @@ public class Principal extends javax.swing.JFrame {
                 marca.addItem(temporal); //Agregamos los datos la combobox
             }
 
-           // System.out.println(inString);
+            // System.out.println(inString);
             a.close();
 
         } catch (IOException e) {
@@ -243,6 +255,40 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_coloresActionPerformed
 
+    private void bntContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntContinuarActionPerformed
+        // TODO add your handling code here:
+
+        if (furgoneta.isSelected());
+
+        double precio;
+        String numPlaca;
+        precio = Double.parseDouble(textPrecio.getText());
+        numPlaca = textPlaca.getText();
+        //Aqui llamo la clase padre 
+        Vehiculo x = new Vehiculo();
+        x.setMarca(String.valueOf(marca.getSelectedItem()));
+        x.setColor(String.valueOf(colores.getSelectedItem()));
+        x.setPrecio(precio);
+        x.setMatricula(numPlaca);
+        interfazFurgoneta ventana = new interfazFurgoneta();
+        ventana.setVisible(true);
+
+        if (deportivo.isSelected());
+        precio = Double.parseDouble(textPrecio.getText());
+
+        numPlaca = textPlaca.getText();
+        //Aqui llamo la clase padre 
+        Vehiculo a = new Vehiculo();
+        a.setMarca(String.valueOf(marca.getSelectedItem()));
+        a.setColor(String.valueOf(colores.getSelectedItem()));
+        a.setPrecio(precio);
+        a.setMatricula(numPlaca);
+        InterfazDeportivo ventana1 = new InterfazDeportivo();
+        ventana1.setVisible(true);
+
+
+    }//GEN-LAST:event_bntContinuarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -279,9 +325,10 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntContinuar;
     private javax.swing.JComboBox colores;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox deportivo;
+    private javax.swing.JCheckBox furgoneta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

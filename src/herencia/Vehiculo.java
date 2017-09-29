@@ -21,8 +21,55 @@ public class Vehiculo {
         this.matricula = matricula;
         this.precio = precio;
     }
+    
+    
+     public Vehiculo() {
+         
+        
+    }
+     
+     
+//     public String getAtributos() {
+//        return "Marca: " + marca;
+//                + "\nColor:" + color
+//                + "\nMatricula:" + matricula
+//                + "\nPrecio:" + precio;
+//
+//    }
 
-    
-    
-    
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+     
+     
+
 }

@@ -17,4 +17,27 @@ public class Deportivo extends Vehiculo {
         super(marca, color, matricula, precio);
     }
     
+    
+    public Deportivo(){
+        
+    }
+
+    public double getVelocidadMaxima() {
+        return velocidadMaxima;
+    }
+
+    public void setVelocidadMaxima(double velocidadMaxima) {
+        this.velocidadMaxima = velocidadMaxima;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
+    }
+    
+    
+    
 }

@@ -10,6 +10,7 @@ package herencia;
  * @author Anthonny
  */
 public class Furgoneta extends Vehiculo {
+
     public int capasidadPersonas;
     public boolean disponible;
 
@@ -17,6 +18,24 @@ public class Furgoneta extends Vehiculo {
         super(marca, color, matricula, precio);
     }
 
-    
-    
+    public Furgoneta() {
+
+    }
+
+    public int getCapasidadPersonas() {
+        return capasidadPersonas;
+    }
+
+    public void setCapasidadPersonas(int capasidadPersonas) {
+        this.capasidadPersonas = capasidadPersonas;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
 }
