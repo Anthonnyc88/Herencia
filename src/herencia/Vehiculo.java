@@ -10,6 +10,7 @@ package herencia;
  * @author Anthonny
  */
 public class Vehiculo {
+
     public String marca;
     public String color;
     public String matricula;
@@ -21,22 +22,10 @@ public class Vehiculo {
         this.matricula = matricula;
         this.precio = precio;
     }
-    
-    
-     public Vehiculo() {
-         
-        
-    }
-     
-     
-//     public String getAtributos() {
-//        return "Marca: " + marca;
-//                + "\nColor:" + color
-//                + "\nMatricula:" + matricula
-//                + "\nPrecio:" + precio;
-//
-//    }
 
+    public Vehiculo() {
+
+    }
 
     public String getMarca() {
         return marca;
@@ -69,7 +58,13 @@ public class Vehiculo {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-     
-     
+
+    public String getAtributos() {
+        return "Marca: " + marca
+                + "\nColor: " + color
+                + "\nMatricula:" + matricula
+                + "\nPrecio: " + precio;
+
+    }
 
 }

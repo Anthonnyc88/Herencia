@@ -10,16 +10,16 @@ package herencia;
  * @author Anthonny
  */
 public class Deportivo extends Vehiculo {
+
     public double velocidadMaxima;
     public double potencia;
 
     public Deportivo(String marca, String color, String matricula, double precio) {
         super(marca, color, matricula, precio);
     }
-    
-    
-    public Deportivo(){
-        
+
+    public Deportivo() {
+
     }
 
     public double getVelocidadMaxima() {
@@ -37,7 +37,15 @@ public class Deportivo extends Vehiculo {
     public void setPotencia(double potencia) {
         this.potencia = potencia;
     }
-    
-    
-    
+
+    public String getAtributos() {
+        return "Marca: " + marca
+                + "\nColor: " + color
+                + "\nMatricula:" + matricula
+                + "\nPrecio: " + precio
+                + "\nVelocidad Maxima: " + velocidadMaxima
+                + "\nPotencia: " + potencia;
+
+    }
+
 }

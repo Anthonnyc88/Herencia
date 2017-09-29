@@ -12,10 +12,12 @@ package herencia;
 public class Furgoneta extends Vehiculo {
 
     public int capasidadPersonas;
-    public boolean disponible;
+    public String disponible;
 
-    public Furgoneta(String marca, String color, String matricula, double precio) {
+    public Furgoneta(int capasidadPersonas, String disponible, String marca, String color, String matricula, double precio) {
         super(marca, color, matricula, precio);
+        this.capasidadPersonas = capasidadPersonas;
+        this.disponible = disponible;
     }
 
     public Furgoneta() {
@@ -30,12 +32,22 @@ public class Furgoneta extends Vehiculo {
         this.capasidadPersonas = capasidadPersonas;
     }
 
-    public boolean isDisponible() {
+    public String getDisponible() {
         return disponible;
     }
 
-    public void setDisponible(boolean disponible) {
+    public void setDisponible(String disponible) {
         this.disponible = disponible;
+    }
+
+    public String getAtributos() {
+        return "Marca: " + marca
+                + "\nColor: " + color
+                + "\nMatricula:" + matricula
+                + "\nPrecio: " + precio
+                + "\nCapasidad Personas: " + capasidadPersonas
+                + "\nDisponible: " + disponible;
+
     }
 
 }

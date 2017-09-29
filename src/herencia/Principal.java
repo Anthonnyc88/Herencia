@@ -26,6 +26,26 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
+
+//        precio.setVisible(false);
+//        textPrecio.setVisible(false);
+//        placa.setVisible(false);
+//        
+        depo.setVisible(false);
+        potencia.setVisible(false);
+        textPotencia.setVisible(false);
+        velocidad.setVisible(false);
+        velo.setVisible(false);
+        bntGuarda.setVisible(false);
+
+        Furgoneta.setVisible(false);
+        capacidad.setVisible(false);
+        textCapasidad.setVisible(false);
+        Disponible.setVisible(false);
+        disponible.setVisible(false);
+        capacidad.setVisible(false);
+        bntGuardar.setVisible(false);
+
     }
 
     /**
@@ -38,9 +58,9 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        precio = new javax.swing.JLabel();
         textPrecio = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        placa = new javax.swing.JLabel();
         textPlaca = new javax.swing.JTextField();
         furgoneta = new javax.swing.JCheckBox();
         deportivo = new javax.swing.JCheckBox();
@@ -48,15 +68,27 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         marca = new javax.swing.JComboBox();
         colores = new javax.swing.JComboBox();
-        bntContinuar = new javax.swing.JButton();
+        bntGuarda = new javax.swing.JButton();
+        potencia = new javax.swing.JLabel();
+        velo = new javax.swing.JComboBox();
+        textPotencia = new javax.swing.JTextField();
+        depo = new javax.swing.JLabel();
+        velocidad = new javax.swing.JLabel();
+        bntGuardar = new javax.swing.JButton();
+        disponible = new javax.swing.JComboBox();
+        Disponible = new javax.swing.JLabel();
+        Furgoneta = new javax.swing.JLabel();
+        capacidad = new javax.swing.JLabel();
+        textCapasidad = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("REGISTRAR VEHICULO");
 
-        jLabel5.setText("Precio Vehiculo");
+        precio.setText("Precio Vehiculo");
 
-        jLabel6.setText("Numero Placa");
+        placa.setText("Numero Placa");
 
         furgoneta.setText("Furgoneta");
         furgoneta.addActionListener(new java.awt.event.ActionListener() {
@@ -91,10 +123,45 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        bntContinuar.setText("Continuar");
-        bntContinuar.addActionListener(new java.awt.event.ActionListener() {
+        bntGuarda.setText("GUARDAR");
+        bntGuarda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntContinuarActionPerformed(evt);
+                bntGuardaActionPerformed(evt);
+            }
+        });
+
+        potencia.setText("Potencia");
+
+        velo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "100", "150", "200" }));
+
+        depo.setText("Deportivo");
+
+        velocidad.setText("Velocidad Maxima");
+
+        bntGuardar.setText("Guardar");
+        bntGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntGuardarActionPerformed(evt);
+            }
+        });
+
+        disponible.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SI", "NO" }));
+        disponible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disponibleActionPerformed(evt);
+            }
+        });
+
+        Disponible.setText("Disponible");
+
+        Furgoneta.setText("Furgoneta");
+
+        capacidad.setText("Capacidad");
+
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -106,40 +173,64 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(148, 148, 148)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(colores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(146, 146, 146))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(velocidad)
+                                    .addComponent(potencia))
+                                .addGap(30, 30, 30)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(depo)
+                            .addComponent(velo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bntGuarda)
+                            .addComponent(capacidad)
+                            .addComponent(Disponible))
+                        .addGap(0, 199, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textPlaca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(precio)
+                                    .addComponent(placa))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel6))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                                        .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(283, 283, 283))
+                                        .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Furgoneta))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(furgoneta)
                                 .addGap(43, 43, 43)
-                                .addComponent(deportivo)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(colores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(deportivo)))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCapasidad, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(141, 141, 141))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(212, 212, 212)
-                .addComponent(bntContinuar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bntGuardar)
+                .addGap(198, 198, 198))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(395, 395, 395)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,26 +240,58 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(49, 49, 49)
+                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(depo))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(potencia))
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(colores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(textPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(furgoneta)
-                    .addComponent(deportivo))
-                .addGap(33, 33, 33)
-                .addComponent(bntContinuar)
-                .addGap(146, 146, 146))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(velo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(velocidad))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bntGuarda)
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(precio)
+                                    .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(Furgoneta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(placa)
+                            .addComponent(textPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textCapasidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(capacidad))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(furgoneta)
+                                    .addComponent(deportivo)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Disponible)
+                                    .addComponent(disponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(204, 204, 204))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bntGuardar)
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton1)
+                        .addGap(75, 75, 75))))
         );
 
         pack();
@@ -176,11 +299,40 @@ public class Principal extends javax.swing.JFrame {
 
     private void furgonetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_furgonetaActionPerformed
         // TODO add your handling code here:
+        depo.setVisible(false);
+        potencia.setVisible(false);
+        textPotencia.setVisible(false);
+        velocidad.setVisible(false);
+        velo.setVisible(false);
+        bntGuarda.setVisible(false);
+
+        Furgoneta.setVisible(true);
+        capacidad.setVisible(true);
+        textCapasidad.setVisible(true);
+        Disponible.setVisible(true);
+        disponible.setVisible(true);
+        capacidad.setVisible(true);
+        bntGuardar.setVisible(true);
+
 
     }//GEN-LAST:event_furgonetaActionPerformed
 
     private void deportivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deportivoActionPerformed
         // TODO add your handling code here:
+        depo.setVisible(true);
+        potencia.setVisible(true);
+        textPotencia.setVisible(true);
+        velocidad.setVisible(true);
+        velo.setVisible(true);
+        bntGuarda.setVisible(true);
+
+        Furgoneta.setVisible(false);
+        capacidad.setVisible(false);
+        textCapasidad.setVisible(false);
+        Disponible.setVisible(false);
+        disponible.setVisible(false);
+        capacidad.setVisible(false);
+        bntGuardar.setVisible(false);
 
     }//GEN-LAST:event_deportivoActionPerformed
 
@@ -255,39 +407,118 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_coloresActionPerformed
 
-    private void bntContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntContinuarActionPerformed
+    private void bntGuardaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntGuardaActionPerformed
         // TODO add your handling code here:
-
-        if (furgoneta.isSelected());
 
         double precio;
         String numPlaca;
         precio = Double.parseDouble(textPrecio.getText());
         numPlaca = textPlaca.getText();
-        //Aqui llamo la clase padre 
-        Vehiculo x = new Vehiculo();
-        x.setMarca(String.valueOf(marca.getSelectedItem()));
-        x.setColor(String.valueOf(colores.getSelectedItem()));
-        x.setPrecio(precio);
-        x.setMatricula(numPlaca);
-        interfazFurgoneta ventana = new interfazFurgoneta();
-        ventana.setVisible(true);
 
-        if (deportivo.isSelected());
+        double deportivo;
+        deportivo = Double.parseDouble(textPotencia.getText());
+
+        int index = velo.getSelectedIndex();
+        if (index == 0) {
+            int num = 100;
+        } else if (index == 1) {
+            int num1 = 150;
+        } else if (index == 2) {
+            int num2 = 250;
+
+        }
+        //Aqui llamo la clase Hija
+
+        Deportivo c = new Deportivo();
+        c.setMarca(String.valueOf(marca.getSelectedItem()));
+        c.setColor(String.valueOf(colores.getSelectedItem()));
+        c.setPrecio(precio);
+        c.setMatricula(numPlaca);
+        c.setPotencia(deportivo);
+        c.setVelocidadMaxima(index);
+         ArrayList ListaDeportivo = new ArrayList<>();
+         ListaDeportivo.add(c);
+         
+         
+         File f;
+        FileWriter w;
+        BufferedWriter bw;
+        PrintWriter wi;
+        String texto = "";
+        try {
+            File archivo = new File("C:\\Users\\Anthonny\\Documents\\NetBeansProjects\\Herencia\\Deportivos.txt");
+
+            if (archivo.createNewFile()) {
+                System.out.println("se ha creado un archivo");
+            }
+
+            System.out.println("Probando.");
+            //Aqui lo lee
+            FileReader leer = new FileReader(archivo);
+            BufferedReader a = new BufferedReader(leer);
+            String linea;
+            while ((linea = a.readLine()) != null) {
+                ListaDeportivo.add(linea);
+            }
+            
+            // System.out.println(inString);
+            a.close();
+
+        } catch (IOException e) {
+            System.out.println("no se ha podido crear el archivo" + e);
+        }
+         
+        
+        //Aqui imprimimo los atributos
+
+        System.out.println(c.getAtributos());
+
+
+    }//GEN-LAST:event_bntGuardaActionPerformed
+
+    private void bntGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntGuardarActionPerformed
+        // TODO add your handling code here:
+        double precio;
+        String numPlaca;
         precio = Double.parseDouble(textPrecio.getText());
-
         numPlaca = textPlaca.getText();
-        //Aqui llamo la clase padre 
-        Vehiculo a = new Vehiculo();
-        a.setMarca(String.valueOf(marca.getSelectedItem()));
-        a.setColor(String.valueOf(colores.getSelectedItem()));
-        a.setPrecio(precio);
-        a.setMatricula(numPlaca);
-        InterfazDeportivo ventana1 = new InterfazDeportivo();
-        ventana1.setVisible(true);
+        int capacidad;
+        capacidad = Integer.parseInt(textCapasidad.getText());
+        String disponibles;
+        int index1 = disponible.getSelectedIndex();
+        String s = "SI";
+        String n = "No";
+        String mensaje;
+
+        if (index1 == 0) {
+            mensaje = s;
+
+        } else if (index1 == 1) {
+            mensaje = n;
+
+        }
+
+        Furgoneta m = new Furgoneta();
+        m.setMarca(String.valueOf(marca.getSelectedItem()));
+        m.setColor(String.valueOf(colores.getSelectedItem()));
+        m.setPrecio(precio);
+        m.setMatricula(numPlaca);
+        m.setCapasidadPersonas(capacidad);
+        m.setDisponible(String.valueOf(index1));
+
+        System.out.println(m.getAtributos());
 
 
-    }//GEN-LAST:event_bntContinuarActionPerformed
+    }//GEN-LAST:event_bntGuardarActionPerformed
+
+    private void disponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_disponibleActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,17 +556,29 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntContinuar;
+    private javax.swing.JLabel Disponible;
+    private javax.swing.JLabel Furgoneta;
+    private javax.swing.JButton bntGuarda;
+    private javax.swing.JButton bntGuardar;
+    private javax.swing.JLabel capacidad;
     private javax.swing.JComboBox colores;
+    private javax.swing.JLabel depo;
     private javax.swing.JCheckBox deportivo;
+    private javax.swing.JComboBox disponible;
     private javax.swing.JCheckBox furgoneta;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JComboBox marca;
+    private javax.swing.JLabel placa;
+    private javax.swing.JLabel potencia;
+    private javax.swing.JLabel precio;
+    private javax.swing.JTextField textCapasidad;
     private javax.swing.JTextField textPlaca;
+    private javax.swing.JTextField textPotencia;
     private javax.swing.JTextField textPrecio;
+    private javax.swing.JComboBox velo;
+    private javax.swing.JLabel velocidad;
     // End of variables declaration//GEN-END:variables
 }
